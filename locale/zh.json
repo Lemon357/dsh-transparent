@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "透明背景",
+    "description": "把窗口变成可调透明度的亚克力毛玻璃，让桌面壁纸透出。插件自带桌面壳补丁：首次安装后重启一次 DSH 即生效；点击窗口右侧中部的「◐」按钮打开滑杆，0%–62% 实时调节，数值会被记住，自动适配浅色与深色主题。补丁只改桌面壳 app.asar 的窗口材质参数，原文件自动备份，可用 node desktop/patch.mjs restore 撤销，设置 DSH_TRANSPARENT_SKIP_PATCH=1 可禁止自动打补丁。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Transparent background",
+    "description": "Turns the window into an acrylic glass surface whose opacity you can tune so the desktop wallpaper shows through. The plugin ships the desktop-shell patch itself: install, restart DeepSeek Harness once, and it is live. Click the「◐」button at the middle of the window's right edge for the 0%–62% slider (applied live and remembered); light and dark themes adapt. The patch only changes the window-material parameters in the desktop app.asar, backs up the original, can be undone with `node desktop/patch.mjs restore`, and automatic patching can be disabled with DSH_TRANSPARENT_SKIP_PATCH=1.",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "dsh-transparent",
+  "version": "1.0.12",
+  "type": "module",
+  "description": "Translucent (acrylic) window background for DeepSeek Harness with adjustable opacity.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "desktop",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "keywords": [
+    "dsh",
+    "theme",
+    "transparency",
+    "acrylic",
+    "glass"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lemon357/dsh-transparent.git"
+  }
+}
