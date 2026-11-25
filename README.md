@@ -22,13 +22,6 @@
 
 应用内升级会覆盖 `app.asar`，下次启动插件会重新打补丁（同样需要再重启一次才生效）。若大版本改了 `main.js` 锚点，补丁会安全失败并在 Host 日志留下 `[dsh-transparent] desktop patch skipped: ...`，窗口保持原样。
 
-## 实现
-
-- Client 半边：半透明主题 token（`--dsw-alias-bg-base`、`--dsw-alias-bg-layer-*`、`--dsw-specific-sidebar-fill`、`--dsw-specific-input-major`、`--dsw-specific-menu`）+ `html/body` 透明。
-- 抹平标题带与内容区的接缝：标题带按侧栏宽度做渐变（侧栏色 → 内容色），主内容卡片的 16px 左上圆角归零——透明后原本会露出一个白色圆角「小片」。
-- 控件挂在 `shell.overlay` 插槽，纯 CSS + React，无额外依赖；数值存在 `localStorage["dsh-transparent.alpha"]`。
-- 设置弹窗等模态面保持不透明：在 `[data-shortcut-modal="settings"]` 子树内重置 token，避免透明背景影响可读性。
-
 ## 目录
 
 ```
@@ -41,13 +34,6 @@ locale/{zh,en}.json # 名称 / 描述 / 详情文档
 docs/               # DETAIL.md + preview.svg（商店详情页）
 icon.svg            # 商店图标
 ```
-
-## 上架
-
-- `files` 已列全运行时文件（含 `desktop/`）；`locale` 元数据与 `docs/` 预览图随包发布。
-- 打包：`npm pack` 或压缩本目录；插件市场按 bundle 收录，无需构建步骤。
-- 自动修改宿主 `app.asar` 属于强权限行为，上架时请在描述里保留「可逆 + 可用环境变量关闭」的说明。
-- 名称如需改成自己的 scope（如 `@your-name/dsh-transparent`），同步修改 `package.json` 的 `name`、`cordis.patch.yml` 的 `name` 与 `client.js` 里的 `load({ id })`。
 
 ## 卸载
 
