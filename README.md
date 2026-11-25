@@ -3,12 +3,28 @@
 给 DeepSeek Harness 桌面版加上**可调透明度的亚克力毛玻璃窗口背景**，让桌面壁纸透出来。
 本 bundle 自带桌面壳补丁：安装后自动打补丁，无需再单独运行 `acrylic/` 里的脚本。
 
+## 截图
+
+### 磨砂（亚克力）
+![磨砂](docs/screenshots/acrylic.jpg)
+
+### 无磨砂（原始壁纸）
+![无磨砂](docs/screenshots/none.jpg)
+
+### 调节透明度
+![透明度面板](docs/screenshots/panel.jpg)
+
+## 安装
+
+1. 下载仓库：`git clone https://github.com/Lemon357/dsh-transparent.git`，或下载 ZIP 解压。
+2. 打开 DSH → 左侧「插件」→ 右上「添加插件」→ 选择该目录；也可用 `plugin_manager install_bundle <目录绝对路径>`。
+3. 首次加载后插件会给桌面壳 `resources/app.asar` 打补丁（可逆，原版备份为 `resources/app.asar.original`）。
+4. **重启一次 DSH**，窗口即变为半透明毛玻璃。
+
 ## 使用
 
-1. 安装本 bundle（插件页 → 添加插件，或用 `plugin_manager install_bundle` 指定本目录）。
-2. 首次加载后插件会给桌面壳 `resources/app.asar` 打补丁（可逆，原版备份为 `resources/app.asar.original`）。
-3. **重启一次 DSH**，窗口即变为半透明毛玻璃。
-4. 之后点窗口右侧中部的「◐」按钮调透明度：0%–62%，预设 更透 22% / 推荐 34% / 更实 46%，数值自动记住。
+- 点窗口右侧中部的「◐」按钮打开面板：滑杆 0%–62%，预设 全透 0% / 更透 22% / 推荐 34% / 更实 46%，数值自动记住。
+- 面板里的「窗口材质」可切换 磨砂（亚克力）/ 无磨砂（透明窗口），切换后需重启一次 DSH 生效。
 
 ## 桌面补丁
 
@@ -31,7 +47,7 @@ index.js            # Host 半边：首次加载自动打桌面补丁
 desktop/patch.mjs   # 桌面补丁工具（asar 原地改写；status/apply/restore）
 client.js           # Client 半边：token、控件、持久化
 locale/{zh,en}.json # 名称 / 描述 / 详情文档
-docs/               # DETAIL.md + preview.svg（商店详情页）
+docs/               # DETAIL.md + preview.svg + screenshots/（README 截图）
 icon.svg            # 商店图标
 ```
 
